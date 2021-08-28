@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import Chefinfo from './form/personalinfo';
-import Userinfo from './form/userinfo';
+// import Chefinfo from './form/personalinfo';
+// import Userinfo from './form/userinfo';
 
 ReactDOM.render(
   <React.StrictMode>

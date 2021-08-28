@@ -22,25 +22,23 @@ export default class Changeaddress extends Component
 
     render() {
         return (
-            <div className="change-address-border">
-             <form action="" method="get">
-                <label className="labelp address-regularing"> Address <sup className="supersc">*</sup> : </label>                
-                <input value = {this.state.Address} onChange ={this.caddress} className = "ipage kbox address-right" required></input> 
+             <form action="" method="get"  className="change-address-border">
+                <label className="label-beauty address-regularing"> Address <sup className="supersc">*</sup> : </label>                
+                <input value = {this.state.Address} onChange ={this.caddress} className = "changeAddress-label" required></input> 
 
-                <label  className="labelp address-regularing"> City <sup className="supersc">*</sup> : </label>
-                <input type="text" value = {this.state.City} onChange = {this.ccity} className = "ipage kbox address-right" required></input> <br/>
+                <label  className="label-beauty address-regularing"> City <sup className="supersc">*</sup> : </label>
+                <input type="text" value = {this.state.City} onChange = {this.ccity} className = "changeAddress-label" required></input> <br/>
 
-                <label className="labelp address-regularing"> State <sup className="supersc">*</sup> : </label>
-                <input type="text" value = {this.state.State} onChange = {this.cstate} className = "ipage kbox address-right" required></input> &ensp; &ensp; 
+                <label className="label-beauty address-regularing"> State <sup className="supersc">*</sup> : </label>
+                <input type="text" value = {this.state.State} onChange = {this.cstate} className = "changeAddress-label" required></input> &ensp; &ensp; 
 
-                <label className="labelp address-regularing" > Pincode <sup className="supersc">*</sup> : </label>
-                <input type="text" inputMode= "numeric" value = {this.state.Pincode} onChange = {this.cpincode} className = "ipage kbox address-right" required></input> <br/>
+                <label className="label-beauty address-regularing" > Pincode <sup className="supersc">*</sup> : </label>
+                <input type="text" inputMode= "numeric" value = {this.state.Pincode} onChange = {this.cpincode} className = "changeAddress-label" required></input> <br/>
                  <br/>
                 <button type="submit" className=" change-address-button">Change address</button>
                 <br/> 
 
             </form>
-           </div>
         )
     }
 }

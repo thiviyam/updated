@@ -1,5 +1,5 @@
 .bod {
-   margin-left: 150px;
+  margin-left: 150px;
   /* margin-right: 150px; */
   /* padding-left: 4cm; */
   /* height: 100vh;  */
@@ -11,7 +11,7 @@
   /* display: flex; */
   /* flex-direction: column; */
   align-items: center;
-  height:fit-content;
+  height: fit-content;
   /* text-align: center; */
 }
 
@@ -19,7 +19,7 @@ h3 {
   text-align: center;
   color: crimson;
 }
-label.label{
+label.label {
   width: 17%;
   padding: 25px;
 }
@@ -34,11 +34,16 @@ input.ip1 {
   transition: all 250ms ease-in-out;
   border-radius: 2px;
 }
-input.ip1:hover{
+input.ip1:hover {
   background-color: #ffffff;
   outline: none;
-  box-shadow: 0px 0px 12px 0.8px #3474dbb2;
-            transition: all 250ms ease-in-out;
+  box-shadow: 0px 0px 12px 0.8px rgb(241, 103, 131);
+  transition: all 250ms ease-in-out;
+}
+
+input.ip1:focus {
+  outline: none;
+  box-shadow: 0px 0px 12px 0.8px rgb(241, 103, 131);
 }
 /* .ip {
   display: inline;
@@ -58,9 +63,7 @@ input.ip1:hover{
   align-items: center;
   text-align: center;
   width: 100%;
-  
 }
-
 
 .ipage {
   display: inline;
@@ -73,13 +76,17 @@ input.ip1:hover{
   margin: 5px;
   background-color: whitesmoke;
   transition: all 250ms ease-in-out;
-} 
-.ipage:hover{
+}
+.ipage:hover {
   background-color: #ffffff;
   outline: none;
-  box-shadow: 0px 0px 12px 0.8px #3474dbb2;
-            transition: all 250ms ease-in-out;
+  box-shadow: 0px 0px 12px 0.8px rgb(241, 103, 131);
+  transition: all 250ms ease-in-out;
+}
 
+.ipage:focus {
+  outline: none;
+  box-shadow: 0px 0px 12px 0.8px rgb(241, 103, 131);
 }
 
 .upload {
@@ -105,28 +112,30 @@ input.ip1:hover{
   left: 27cm;
 } */
 
-
-
 /* .diiv {
   border-bottom: rgb(201, 199, 199) solid;
   border-width: 1px;
 } */
 
 .selectarea {
-  width: 36.0rem;
+  width: 36rem;
   /* border-width: 2px; */
   height: 37px;
   background-color: whitesmoke;
   outline: none;
-
 }
-.selectarea:hover{
+.selectarea:hover {
   background-color: #ffffff;
   outline: none;
-  box-shadow: 0px 0px 12px 0.8px #3474dbb2;
-            transition: all 250ms ease-in-out;
-
+  box-shadow: 0px 0px 12px 0.8px rgb(241, 103, 131);
+  transition: all 250ms ease-in-out;
 }
+
+.selectarea:focus {
+  outline: none;
+  box-shadow: 0px 0px 12px 0.8px rgb(241, 103, 131);
+}
+
 /* 
 .cmds {
   position: relative;
@@ -192,6 +201,13 @@ input.ip1:hover{
   color: rgb(250, 250, 250);
 }
 
+@media screen and (max-width: 1673px) {
+  .bod {
+    margin-left: 150px;
+    padding-left: 200px;
+  }
+}
+
 @media screen and (max-width: 1520px) {
   .butn {
     margin-left: 200px;
@@ -233,10 +249,9 @@ input.ip1:hover{
   .nofyrs-label {
     display: inline;
   }
-
 }
 
- @media screen and (max-width: 1391px) {
+@media screen and (max-width: 1391px) {
   .bod {
     padding-left: 113.3px;
   }
@@ -259,10 +274,9 @@ input.ip1:hover{
   }
 }
 
-  .butn {
-    margin-left: 70px;
-  }
-
+.butn {
+  margin-left: 70px;
+}
 
 @media screen and (max-width: 1357px) {
   .label {
@@ -270,18 +284,18 @@ input.ip1:hover{
   }
 
   .ipage {
-      display: inline;
-      width: 174px;
-      height: 33.8px;
-      border-style: solid;
-      margin: 2px;
+    display: inline;
+    width: 174px;
+    height: 33.8px;
+    border-style: solid;
+    margin: 2px;
   }
 
   .butn {
     width: 160px;
     margin-left: 110px;
   }
-} 
+}
 
 /* @media screen and (max-width: 1311px) {
   .caution {

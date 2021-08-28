@@ -105,7 +105,7 @@ export default class Chefinfo extends Component
 
                 <label className="label"> Dietry Restriction</label>
                 <select className = "ip selectarea" required  onChange = {this.cprefer}>
-                    <option value='' selected disabled> Choose your preference that you cook</option>
+                    <option value='' disabled> Choose your preference that you cook</option>
                     <option value = {this.state.Preference} onChange = {this.cprefer}>Veg</option>
                     <option value = {this.state.Preference} onChange = {this.cprefer}>Non-veg</option>
                     <option value = {this.state.Preference} onChange = {this.cprefer}>Both</option>

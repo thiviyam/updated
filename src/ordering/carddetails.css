@@ -5,11 +5,11 @@
 }
 
 .ccardBody {
-  border: solid rgb(241, 162, 148);
+  border: solid crimson;
   border-radius: 5pt;
   border-width: 1.2pt;
   padding: 4pt;
-  background-color: rgb(255, 246, 245);
+  background-color: rgb(245, 234, 236);
 }
 
 .label-beauty {
@@ -30,4 +30,15 @@
 
 .forcvv {
   width: 2cm;
+}
+
+.changeAddress-label {
+  border-radius: 6px;
+  border-color: rgb(201, 199, 199);
+  border-spacing: 10px;
+  width: 120px;
+  height: 25px;
+  border-style: solid;
+  margin: 5px;
+  padding-left: 1px;
 }

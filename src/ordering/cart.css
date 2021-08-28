@@ -1,3 +1,10 @@
+.body-cart {
+  background-color: rgb(238, 252, 252);
+  height: 100%;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
 .money-right {
   float: right;
 }
@@ -25,16 +32,16 @@
   background-color: rgb(253, 237, 236);
   border: rgb(121, 118, 118) solid;
   border-radius: 7pt;
-  margin-left: 4.8cm;
+  margin-left: 20px;
   margin-right: 1cm;
-  padding-bottom: 0.1cm;
-  padding-right: 0.1cm;
+  padding-bottom: 3px;
+  padding-right: 3px;
 }
 
 .change-address-button {
-  border-color: rgb(253, 115, 100);
+  border-color: crimson;
   font-weight: bold;
-  color: rgb(228, 83, 83);
+  color: crimson;
   border-style: solid;
   border-radius: 7px;
   float: right;
@@ -42,6 +49,6 @@
 }
 
 .change-address-button:hover {
-  background-color: salmon;
+  background-color: crimson;
   color: rgb(248, 242, 242);
 }

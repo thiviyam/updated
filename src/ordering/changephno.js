@@ -17,7 +17,7 @@ export default class Changephno extends Component
             <div className="change-address-border">
                 <form action="" method="get">
                 <label className="labelp address-regularing"> Phone No : </label>                
-                <input value = {this.state.phoneNo} onChange ={this.changephno} className = "ipage kbox address-right" ></input> 
+                <input value = {this.state.phoneNo} onChange ={this.changephno} className = "changeAddress-label" ></input> 
                 <br/>
 
                 <button type="submit" className=" change-address-button">Change Phoneno</button>
