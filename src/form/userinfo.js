@@ -15,7 +15,10 @@ export default class Userinfo extends Component
              Pincode: '',
              Phno: '', Aphno: '',
              Email:'',
-             Allergy:''
+             Allergy:'',
+             username: '',
+             password: '',
+             rePassword: ''
         }
     }
     
@@ -29,6 +32,9 @@ export default class Userinfo extends Component
     caphno = (event) => { this.setState ( { Aphno: event.target.value} ) }
     cemail = (event) => { this.setState ( { Email: event.target.value} ) }
     callergy = (event) => { this.setState ( { Allergy: event.target.value} ) }
+    cusername = (event) => { this.setState ( { username: event.target.value} ) } 
+    cpassword = (event) => { this.setState ( { password: event.target.value} ) } 
+    crepassword = (event) => { this.setState ( { rePassword: event.target.value} ) } 
     
     submitted = (eve) => { eve.preventDefault(); console.log (this.Martial)}
     setclean = () => {
@@ -42,7 +48,77 @@ export default class Userinfo extends Component
         this.setState ( {Aphno :''} ) 
         this.setState ( {Email :''} )
         this.setState ( {Allergy :'no'} )
+        this.setState ( {username :''} )
+        this.setState ( {password :''} )
+        this.setState ( {rePassword :''} )
     }
+
+/////////////////////username/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    usernamePattern = (eve) => {
+         const textPattern = /^[A-Za-z0-9]+$/
+         let text = eve.target.value;
+         let idname =  eve.target.id ;
+
+         if( idname === "usernameId")
+         {
+            if(textPattern.test(text))
+            {
+                let div = document.getElementById("usernameCmds");
+                div.textContent = "";
+            }
+            else{
+                let div = document.getElementById("usernameCmds");
+                div.textContent = "invalid";
+                div.style.color="red";
+            }
+         }
+    }
+
+///////////////////// Password /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    passwordPattern = (eve) => {
+         const textPattern = /^((?=.*\d)(?=.*[a-z])(?=.*[A-z])(?=.*[@!#$%^&.?*()+-])).{8}$/
+         let text = eve.target.value;
+         let idname =  eve.target.id ;
+
+         if( idname === "passwordId")
+         {
+            if(textPattern.test(text))
+            {
+                let div = document.getElementById("passwordCmds");
+                div.textContent = "";
+            }
+            else{
+                let div = document.getElementById("passwordCmds");
+                div.textContent = "invalid";
+                div.style.color="red";
+            }
+         }
+    }
+
+/////////////////////re-enter Password /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    repasswordPattern = (eve) => {
+         let text = eve.target.value;
+         let idname =  eve.target.id ;
+
+         if( idname === "repasswordId")
+         {
+            if(text === this.state.password)
+            {
+                let div = document.getElementById("repasswordCmds");
+                div.textContent = "correct";
+                div.style.color="green";
+            }
+            else{
+                let div = document.getElementById("repasswordCmds");
+                div.textContent = "incorrect";
+                div.style.color="red";
+            }
+         }
+    }
+
 
     render() {
         return (
@@ -53,7 +129,7 @@ export default class Userinfo extends Component
                  
                 <div className="name">
                 <label className="labelp"> Name  </label>
-                <input type="text" value = {this.state.Name} onChange = {this.cname} className = "ip" required></input> <br/>
+                <input type="text" name="name" value = {this.state.Name} onChange = {this.cname} className = "ip" required></input> <br/>
                 </div>
                 
                 
@@ -72,26 +148,26 @@ export default class Userinfo extends Component
                 {/* <h4>Contact details</h4><br/> */}
 
                 <label className="labelp"> Address  </label>                
-                <input value = {this.state.Address} onChange ={this.caddress} className = "ipage kbox" required></input> &ensp; &ensp; &ensp; &nbsp;
+                <input value = {this.state.Address}  name="address" onChange ={this.caddress} className = "ipage kbox" required></input> &ensp; &ensp; &ensp; &nbsp;
 
                 <label  className ="labelp"> City  </label>
-                <input type="text" value = {this.state.City} onChange = {this.ccity} className = "ipage kbox" required></input> <br/>
+                <input type="text"  name="city" value = {this.state.City} onChange = {this.ccity} className = "ipage kbox" required></input> <br/>
 
                 <label className ="labelp"> State  </label>
-                <input type="text" value = {this.state.State} onChange = {this.cstate} className = "ipage kbox" required></input> &ensp; &ensp; &ensp; &nbsp;
+                <input type="text"  name="state" value = {this.state.State} onChange = {this.cstate} className = "ipage kbox" required></input> &ensp; &ensp; &ensp; &nbsp;
 
                 <label className ="labelp"> Pincode  </label>
-                <input type="text" inputMode= "numeric" value = {this.state.Pincode} onChange = {this.cpincode} className = "ipage kbox" required></input> <br/>
+                <input type="text"  name="pincode" inputMode= "numeric" value = {this.state.Pincode} onChange = {this.cpincode} className = "ipage kbox" required></input> <br/>
 
                  <label className ="labelp"> Phone Number  </label>
-                <input type="text" inputMode= "numeric" value = {this.state.Phno} onChange = {this.cphno} className = "ipage kbox" required></input> &ensp; &ensp; &ensp; &nbsp;
+                <input type="text"  name="phno" inputMode= "numeric" value = {this.state.Phno} onChange = {this.cphno} className = "ipage kbox" required></input> &ensp; &ensp; &ensp; &nbsp;
 
                {/* <label className ="labelp"> Alternative ph no : </label>
                 <input type="text" inputMode= "numeric" value = {this.state.Aphno} onChange = {this.caphno} className = "ipage kbox" ></input> <br/> */}
 
                 
                 <label className ="labelp"> E-mail ID  </label>
-                <input type="email" value = {this.state.Email} onChange = {this.cemail} className = "ipage kbox"></input>
+                <input type="email"  name="email" value = {this.state.Email} onChange = {this.cemail} className = "ipage kbox"></input>
 
 
               </div>
@@ -111,7 +187,7 @@ export default class Userinfo extends Component
                  </p> */}
               <div className="other">
                 <label className="labelp"> Any Allergies  </label>
-                <input type="text" value = {this.state.Allergy} onChange = {this.callergy} className = "ip" placeholder="If Yes Mention"></input> <br/>
+                <input type="text"  name="allergies" value = {this.state.Allergy} onChange = {this.callergy} className = "ip" placeholder="If Yes Mention"></input> <br/>
                 {/* <label className="cmds">If YES mention here</label> <br/> */}
 
                 {/* <label className="labelp"> Your Plan <sup className="supersc">*</sup> : </label>
@@ -122,6 +198,21 @@ export default class Userinfo extends Component
                     <option value = 'Random Days Bases' > Monthly Basis</option>
                     </select> <br/> <br/> <br/> */}
                      </div>
+
+
+                     <div>
+                      <label  className="labelp">Set Username </label>
+                      <input type="text"  name="username" value = {this.state.username} onChange = {this.cusername} onInputCapture={this.usernamePattern} id="usernameId"  className = "ip" required></input> 
+                      <span id="usernameCmds" className="valid-cmds"> </span> <br/>
+
+                      <label  className="labelp">Set Password </label>
+                      <input type="password"  name="password" value = {this.state.password} onChange = {this.cpassword} onInputCapture={this.passwordPattern} id="passwordId"  className = "ip" required></input> 
+                      <span id="passwordCmds" className="valid-cmds"> </span> <br/>
+
+                      <label  className="labelp"> Re-enter Password </label>
+                      <input type="password"  name="repassword" value = {this.state.rePassword} onChange = {this.crepassword} onInputCapture={this.repasswordPattern} id="repasswordId"  className = "ip" required></input> 
+                      <span id="repasswordCmds" className="valid-cmds"> </span> <br/>
+                  </div>
                 
                 <button type="reset" onClick={this.setclean} className="butnu">RESET</button>
                 <button type="submit" className="butnu">SUBMIT</button>
