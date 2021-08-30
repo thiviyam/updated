@@ -39,7 +39,7 @@ export default class Userinfo extends Component
     submitted = (eve) => { eve.preventDefault(); console.log (this.Martial)}
     setclean = () => {
         this.setState ( {Name : ''} ) 
-        // this.setState ( {Gender :''} )  
+        // this.setState ( {Gender :''} )   
         this.setState ( {Address :''} ) 
         this.setState ( {City :''} ) 
         this.setState ( {State :''} ) 

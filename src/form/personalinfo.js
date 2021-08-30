@@ -146,10 +146,10 @@ export default class Chefinfo extends Component
     }
 
 
-////////////////////// number Regex ////////////////////////////////////////////////////////////////////////////////////////
+////////////////////// Phone number Regex ////////////////////////////////////////////////////////////////////////////////////////
 
     numberPattern = (eve) =>{
-         const textPattern = /^[0-9]+$/
+         const textPattern = /^[0-9]{10}$/
          let text = eve.target.value;
          let idname =  eve.target.id ;
           if( idname === "phnoId")
@@ -165,7 +165,15 @@ export default class Chefinfo extends Component
                 div.style.color="red";
             }
          }
-         else if (idname === "pincodeId")
+    }
+
+////////////////////// Pincode Regex ////////////////////////////////////////////////////////////////////////////////////////
+
+    pincodePattern = (eve) =>{
+         const textPattern = /^[0-9]{6}$/
+         let text = eve.target.value;
+         let idname =  eve.target.id ;
+         if (idname === "pincodeId")
          {
              if(textPattern.test(text))
             {
@@ -226,7 +234,7 @@ export default class Chefinfo extends Component
 ///////////////////// Password /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     passwordPattern = (eve) => {
-         const textPattern = /^((?=.*\d)(?=.*[a-z])(?=.*[A-z])(?=.*[@!#$%^&.?*()+-])).{8}$/
+         const textPattern = /^((?=.*\d)(?=.*[a-z])(?=.*[A-z])(?=.*[@!#$%^&.?*()+-])).{8,12}$/
          let text = eve.target.value;
          let idname =  eve.target.id ;
 
@@ -296,7 +304,7 @@ export default class Chefinfo extends Component
                 <span id="stateCmds" className="valid-cmds"> </span> &ensp; &ensp; &ensp; &nbsp;
 
                 <label className="label" > Pincode </label>
-                <input type="text"  name="chefPincode" inputMode= "numeric" value = {this.state.Pincode} onChange = {this.cpincode} onInputCapture={this.numberPattern} id="pincodeId" className = "ipage" required></input>
+                <input type="text"  name="chefPincode" inputMode= "numeric" value = {this.state.Pincode} onChange = {this.cpincode} onInputCapture={this.pincodePattern} id="pincodeId" className = "ipage" required></input>
                  <span id="pincodeCmds" className="valid-cmds"> </span> <br/>
 
                  <label className="label"> Phone Number </label>
